@@ -15,3 +15,7 @@ Aktuální rozšířené implementace datových katalogů [CKAN](https://ckan.or
 Standardem pro metadata v Evropské unii je [DCAT-AP v1.2](https://joinup.ec.europa.eu/release/dcat-ap/12), který vyžaduje například využívání EU slovníků ([EU Vocabularies](https://publications.europa.eu/en/web/eu-vocabularies/about)), umožňuje mít vícejazyčná metadata a je založen na principu [Propojených dat](https://data.gov.cz/otevřené-formální-normy/propojená-data/).
 CKAN ani DKAN i přes existenci různých [DCAT rozšíření](https://github.com/ckan/ckanext-dcat) nedosahují potřebné úrovně kompatibility.
 Podobné řešení, které by ale vyhovovalo stadardům, zatím bohužel chybí.
+
+
+Tento repozitář je udržován v rámci projektu OPZ č. CZ.03.4.74/0.0/0.0/15_025/0004172.
+![Evropská unie - Evropský sociální fond - Operační program Zaměstnanost](https://data.gov.cz/images/ozp_logo_cz.jpg)
