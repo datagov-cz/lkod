@@ -19,12 +19,13 @@ Způsob, jakým je rozhraní implementováno, OFN nespecifikuje. Lze ho tedy imp
 1. Ručně tvořené soubory s obsahem dle OFN, umístěné na web - toto lze použít pro malé, a ne často aktualizované LKODy.
 2. Proprietární systém, který dané soubory (či SPARQL endpoint) zpřístupňuje.
 3. Vlastní silou rozšířený katalog CKAN, DKAN či jiný, který poskytne rozhraní pro vkládání dat, a navíc se zajistí transformace těchto dat do formy dle OFN.
-4. Použití referenční implementace LKOD popsané v tomto repozitáři.
+4. Použití referenční implementace LKOD popsané v tomto repozitáři, nebo jejích částí.
 
 ## Referenční implementace LKOD
 Referenční implementace je v tuto chvíli tvořena pomocí komponent v aktuální implementaci [Národního katalogu otevřených dat](https://github.com/opendata-mvcr/nkod).
 Tato varianta používá výhradně open-source software a GitHub, je pro ni potřeba mít k dispozici (virtuální) server.
 Aktuálně na ní běží například [LKOD MV ČR](https://data.mvcr.gov.cz).
+Jednotlivé kroky či komponenty lze libovolně vyměňovat za jiné, za předpokladu dodržení rozhraní pro NKOD.
 
 ### Workflow referenční implementace
 S touto implementací se pak pracuje následovně:
@@ -48,6 +49,7 @@ S touto implementací se pak pracuje následovně:
 - Repozitář na GitHubu. Sem bude poskytovatel ukládat katalogizační záznamy.
 - Volitelně [LinkedPipes DCAT-AP Viewer](https://github.com/linkedpipes/dcat-ap-viewer), pokud je vyžadováno i uživatelské rozhraní.
 - Web server pro implementaci zabezpečení přístupu k jednotlivým komponentám a příjem Webhooks, např. [nginx](http://nginx.org/)
+- Uživatel plnící LKOD musí umět pracovat s GitHubem a musí mít alespoň základní znalost formátu JSON.
 
 Tento repozitář je udržován v rámci projektu OPZ č. CZ.03.4.74/0.0/0.0/15_025/0004172.
 ![Evropská unie - Evropský sociální fond - Operační program Zaměstnanost](https://data.gov.cz/images/ozp_logo_cz.jpg)
