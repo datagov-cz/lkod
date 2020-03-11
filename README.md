@@ -12,13 +12,15 @@ CKAN ani DKAN i přes existenci různých [DCAT rozšíření](https://github.co
 ## Co je potřeba pro kompatibilitu s NKOD
 Nejprve je třeba si ujasnit, co je nezbytné pro dosažení kompatibility s NKOD.
 Je to pouze poskytnutí strojového rozhraní odpovídajícího [OFN Rozhraní katalogů otevřených dat](https://ofn.gov.cz/rozhraní-katalogů-otevřených-dat/), a to ve variantě podle standardu DCAT-AP pomocí SPARQL endpointu. Uživatelské rozhraní není potřeba.
-Rozhraní CKAN je podorováno pouze z důvodu zpětné kompatibility a nebude dále rozvíjeno.
+OFN se v čase vyvíjí podle toho, jak se vyvíjejí standardy DCAT a DCAT-AP a jak je podle nich rozšiřován NKOD.
+Teď se to děje 2x ročně.
+Rozhraní CKAN je podorováno pouze z důvodu zpětné kompatibility a nebude dále rozvíjeno - se standardem DCAT se rozchází čím dál více.
 Rozhraní DCAT-AP v podobě jednotlivých dokumentů je podporováno jako kompromisní řešení tam, kde z různých důvodů nelze provozovat SPARQL endpoint, ale poskytovatel i tak chce využívat plné kompatibility katalogizačního záznamu s NKOD.
 
 Způsob, jakým je rozhraní implementováno, OFN nespecifikuje. Lze ho tedy implementovat libovolně. Několik vybraných způsobů:
-1. Ručně tvořené soubory s obsahem dle OFN, umístěné na web - toto lze použít pro malé, a ne často aktualizované LKODy.
+1. Ručně tvořené soubory s obsahem dle OFN, umístěné na web - toto lze použít pro malé, a ne často aktualizované LKODy. Toto řešení je však velmi levné a snadné.
 2. Proprietární systém, který dané soubory (či SPARQL endpoint) zpřístupňuje.
-3. Vlastní silou rozšířený katalog CKAN, DKAN či jiný, který poskytne rozhraní pro vkládání dat, a navíc se zajistí transformace těchto dat do formy dle OFN.
+3. Vlastní silou rozšířený katalog CKAN, DKAN či jiný, který poskytne rozhraní pro vkládání dat, a navíc se zajistí transformace těchto dat do formy dle OFN, například nástrojem LinkedPipes ETL (open-source).
 4. Použití referenční implementace LKOD popsané v tomto repozitáři, nebo jejích částí.
 
 ## Referenční implementace LKOD
@@ -37,9 +39,9 @@ S touto implementací se pak pracuje následovně:
   "@type": [
     "http://www.w3.org/ns/dcat#Dataset",
 ```
-3. Takto upravený soubor se nahraje na GitHub do repozitáře poskytovatele ([Příklad MV ČR](https://github.com/opendata-mvcr/lkod-mvcr)). GitHub zde řeší oprávnění uživatelů k editaci jednotlivých záznamů.
-4. GitHub po této akci automaticky zavolá tzv. Webhook, který spustí transformační proces v nástroji [LinkedPipes ETL](https://github.com/linkedpipes/etl)
-5. Proces v LinkedPipes ETL stáhne záznamy z GitHub a nahraje je do SPARQL endpointu (rozhraní pro NKOD)
+3. Takto upravený soubor se nahraje na GitHub do repozitáře poskytovatele ([Příklad MV ČR](https://github.com/opendata-mvcr/lkod-mvcr)). GitHub zde řeší oprávnění uživatelů k editaci jednotlivých záznamů a automatizaci následného aktualizačního procesu.
+4. GitHub po této akci automaticky zavolá tzv. Webhook, který spustí transformační proces v nástroji [LinkedPipes ETL](https://github.com/linkedpipes/etl).
+5. Proces v LinkedPipes ETL stáhne záznamy z GitHub a nahraje je do SPARQL endpointu (rozhraní pro NKOD).
 6. Volitelně, pokud je vyžadováno i uživatelské rozrhaní LKOD, LinkedPipes ETL ve stejném procesu připraví i data pro frontendovou část LKOD, která je realizována pomocí [LinkedPipes DCAT-AP Viewer](https://github.com/linkedpipes/dcat-ap-viewer), stejně jako v NKOD.
 
 ### Požadavky referenční implementace
