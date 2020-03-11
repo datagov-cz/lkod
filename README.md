@@ -37,7 +37,7 @@ S touto implementací se pak pracuje následovně:
   "@type": [
     "http://www.w3.org/ns/dcat#Dataset",
 ```
-3. Takto upravený soubor se nahraje na GitHub do repozitáře poskytovatele. GitHub zde řeší oprávnění uživatelů k editaci jednotlivých záznamů.
+3. Takto upravený soubor se nahraje na GitHub do repozitáře poskytovatele ([Příklad MV ČR](https://github.com/opendata-mvcr/lkod-mvcr)). GitHub zde řeší oprávnění uživatelů k editaci jednotlivých záznamů.
 4. GitHub po této akci automaticky zavolá tzv. Webhook, který spustí transformační proces v nástroji [LinkedPipes ETL](https://github.com/linkedpipes/etl)
 5. Proces v LinkedPipes ETL stáhne záznamy z GitHub a nahraje je do SPARQL endpointu (rozhraní pro NKOD)
 6. Volitelně, pokud je vyžadováno i uživatelské rozrhaní LKOD, LinkedPipes ETL ve stejném procesu připraví i data pro frontendovou část LKOD, která je realizována pomocí [LinkedPipes DCAT-AP Viewer](https://github.com/linkedpipes/dcat-ap-viewer), stejně jako v NKOD.
