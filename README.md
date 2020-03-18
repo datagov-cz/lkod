@@ -53,5 +53,10 @@ S touto implementací se pak pracuje následovně:
 - Web server pro implementaci zabezpečení přístupu k jednotlivým komponentám a příjem Webhooks, např. [nginx](http://nginx.org/)
 - Uživatel plnící LKOD musí umět pracovat s GitHubem a musí mít alespoň základní znalost formátu JSON.
 
+## LKOD, NKOD a vizualizační aplikace
+LKOD je vzhledem k NKOD tedy pouze rozhraní, které splňuje [Otevřenou formální normu (OFN) Rozhraní katalogů otevřených dat](https://ofn.gov.cz/rozhraní-katalogů-otevřených-dat/). Měl by poskytovateli umožnit pohodlně zadávat katalogizační záznamy, tak jako to teď dělá [formulář pro vkládání záznamu do NKOD](https://data.gov.cz/formulář/registrace-datové-sady). Další funkcionalita, jako uživatelské prohlížení záznamů či vizualizace dat jsou volitelnou, nikoliv nutnou součástí.
+
+![Architektura LKOD](architektura.svg)
+
 Tento repozitář je udržován v rámci projektu OPZ č. CZ.03.4.74/0.0/0.0/15_025/0004172.
 ![Evropská unie - Evropský sociální fond - Operační program Zaměstnanost](https://data.gov.cz/images/ozp_logo_cz.jpg)
