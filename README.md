@@ -35,7 +35,7 @@ Toho lze docílit například nástrojem [LinkedPipes ETL (open-source)](https:/
 Tato varianta používá pouze formulář NKOD a GitHub.
 
 ### Požadavky referenční implementace DCAT-AP Dokumenty
-- Repozitář na GitHubu.
+- Repozitář na GitHubu. Nejjednodušší je udělat fork [minimalistického LKOD](https://github.com/opendata-mvcr/lkod-min).
 Sem bude poskytovatel ukládat katalogizační záznamy.
 GitHub zde řeší i přihlašování uživatelů a řízení přístupu uživatelů k repozitáři.
 - Uživatel plnící LKOD musí umět pracovat s GitHubem.
