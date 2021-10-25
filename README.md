@@ -12,7 +12,7 @@ CKAN ani DKAN i přes existenci různých [DCAT rozšíření](https://github.co
 ## Co je potřeba pro kompatibilitu s NKOD
 Nejprve je třeba si ujasnit, co je nezbytné pro dosažení kompatibility s NKOD.
 Je to pouze poskytnutí strojového rozhraní odpovídajícího [OFN Rozhraní katalogů otevřených dat](https://ofn.gov.cz/rozhraní-katalogů-otevřených-dat/).
-Jedná se tedy buď o roshraní [DCAT-AP Dokumenty](https://ofn.gov.cz/rozhraní-katalogů-otevřených-dat/2021-01-11/#dcat-ap-dokumenty), nebo [DCAT-AP SPARQL Endpoint](https://ofn.gov.cz/rozhraní-katalogů-otevřených-dat/2021-01-11/#dcat-ap-sparql-endpoint).
+Jedná se tedy buď o rozhraní [DCAT-AP Dokumenty](https://ofn.gov.cz/rozhraní-katalogů-otevřených-dat/2021-01-11/#dcat-ap-dokumenty), nebo [DCAT-AP SPARQL Endpoint](https://ofn.gov.cz/rozhraní-katalogů-otevřených-dat/2021-01-11/#dcat-ap-sparql-endpoint).
 Uživatelské rozhraní není potřeba, datové sady budou uživateli nalezitelné přímo v Národním katalogu otevřených dat.
 OFN se v čase vyvíjí podle toho, jak se vyvíjejí standardy DCAT a DCAT-AP a jak je podle nich rozšiřován NKOD.
 Teď se to děje zhruba jednou za rok.
