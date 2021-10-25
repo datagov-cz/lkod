@@ -73,10 +73,9 @@ S touto implementací se pak pracuje následovně:
 2. V posledním kroce se tlačítkem se symbolem ozubeného kolečka přepne do režimu "Stáhnout nový záznam pro LKOD", vyplní se IRI datové sady a IRI poskytovatele.
 3. Výsledný JSON-LD soubor se nahraje na GitHub do repozitáře poskytovatele ([Příklad MV ČR](https://github.com/opendata-mvcr/lkod-mvcr)).
 GitHub zde řeší oprávnění uživatelů k editaci jednotlivých záznamů a automatizaci následného aktualizačního procesu.
-4. GitHub po této akci automaticky zavolá tzv. Webhook, který spustí transformační proces v nástroji [LinkedPipes ETL](https://github.com/linkedpipes/etl).
+4. GitHub po této akci automaticky zavolá tzv. Webhook, který aktualizuje klon repozitáře na serveru a spustí transformační proces v nástroji [LinkedPipes ETL](https://github.com/linkedpipes/etl). Podívejte se na [vzorový skript](lkod-sparl/webhook.php) pro obsluhu Webhooku v PHP. Stačí na tento skript nasměrovat GitHub Webhook, vyplnit secret, informace o adresáři s klonem GitHub repozitáře katalogu a IRI [obslužné pipeline](lkod-sparql/LKOD%20z%20GitHub%20repozitáře%20do%20SPARQL%20endpointu.jsonld) v LinkedPipes ETL - vzorová pipeline pracuje s Openlink Virtuoso.
 5. Proces v LinkedPipes ETL stáhne záznamy z GitHub a nahraje je do SPARQL endpointu (rozhraní pro NKOD).
-6. Volitelně, pokud je vyžadováno i uživatelské rozrhaní LKOD, LinkedPipes ETL ve stejném procesu připraví i data pro frontendovou část LKOD, která je realizována pomocí [LinkedPipes DCAT-AP Viewer](https://github.com/linkedpipes/dcat-ap-viewer), stejně jako v NKOD.
-7. SPARQL endpoint je pak [zaregistrován do NKOD](https://opendata.gov.cz/cinnost:registrace-vlastniho-katalogu-v-nkod)
+6. SPARQL endpoint je pak [zaregistrován do NKOD](https://opendata.gov.cz/cinnost:registrace-vlastniho-katalogu-v-nkod)
 
 ## LKOD, NKOD a vizualizační aplikace
 LKOD je vzhledem k NKOD tedy pouze rozhraní, které splňuje [Otevřenou formální normu (OFN) Rozhraní katalogů otevřených dat](https://ofn.gov.cz/rozhraní-katalogů-otevřených-dat/). Měl by poskytovateli umožnit pohodlně zadávat katalogizační záznamy, tak jako to teď dělá [formulář pro vkládání záznamu do NKOD](https://data.gov.cz/formulář/registrace-datové-sady). Další funkcionalita, jako uživatelské prohlížení záznamů či vizualizace dat jsou volitelnou, nikoliv nutnou součástí.
